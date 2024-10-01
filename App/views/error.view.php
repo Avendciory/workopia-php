@@ -8,6 +8,7 @@
             <?= $message ?>
         </p>
     </div>
+    <a href="/listings" class="block text-center">Go Back To Listings</a>
 </section>
 
 <?= loadPartial('footer') ?>
