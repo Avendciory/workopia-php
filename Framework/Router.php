@@ -84,6 +84,11 @@ class Router
     public function route($uri)
     {
         $requestMethod = $_SERVER['REQUEST_METHOD'];
+
+        //Check for _method input
+        if ($requestMethod === 'POST' && isset($_POST['_method'])) {
+            $requestMethod = strtoupper($_POST['_method']);
+        }
         //Split URI into segments
         $uriSegments = explode('/', trim($uri, '/'));
 
