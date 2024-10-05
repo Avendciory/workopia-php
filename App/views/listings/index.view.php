@@ -5,7 +5,13 @@
 <!-- Job Listings -->
 <section>
     <div class="container mx-auto p-4 mt-4">
-        <div class="text-center text-3xl mb-4 font-bold border border-gray-300 p-3">All Jobs</div>
+        <div class="text-center text-3xl mb-4 font-bold border border-gray-300 p-3">
+            <?php if (isset($keywords)): ?>
+                Search results for: <?= htmlspecialchars($keywords) ?>
+            <?php else: ?>
+                All jobs
+            <?php endif; ?>
+        </div>
         <?= loadPartial('message') ?>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
             <!-- Job Listing -->
@@ -20,8 +26,6 @@
                             <li class="mb-2"><strong>Salary:</strong> <?= formatSalary($listing->salary) ?></li>
                             <li class="mb-2">
                                 <strong>Location:</strong> <?= $listing->city ?>
-                                <!-- <span
-                                    class="text-xs bg-blue-500 text-white rounded-full px-2 py-1 ml-2">Local</span> -->
                             </li>
                             <?php if (!empty($listing->tags)): ?>
                                 <li class="mb-2">
