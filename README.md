@@ -8,6 +8,6 @@
 1. Clone the repo into your document root (www, htdocs, etc)
 2. Create a database called `workopia`
 3. Import the `workopia.sql` file into your database
-4. `config/db.php` update with your credentials
+4. Update with your credentials `config/db.php`
 5. Run `composer install` to set up the autoloading
 6. Set your document root to the `public` directory
